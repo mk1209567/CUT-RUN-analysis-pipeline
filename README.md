@@ -10,7 +10,11 @@ Analysis pipeline for CUT&amp;RUN assay including alignment, QC, deduplication, 
 4. Picard
 3. Samtools
 5. MACS2
-If you are using Slurm, you probably could use module load to activate these tools, which is included in my scripts. If not, you could download these tools from their source. After installed, make sure you change the direction of your tools correctly in each script.
+If you are using Slurm, you probably could use *module* load to activate these tools, which is included in my scripts. If not, you could download these tools from their source. After installed, make sure you change the direction of your tools correctly in each script.
 ## Steps:
 Following is the step to do CUT&RUN analysis and the corresponding script name. The scripts are all under pipeline folder.
 ###
+1. FastQC (fastqc.sh)
+2. Remove adaptor (double_trim.sh)
+3. Alignment (bowtie_align.sh)
+4. Mark or remove your portion
