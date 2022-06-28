@@ -1,0 +1,11 @@
+#CUT&RUN processing pipeline order
+#folder "scripts_loop" may have command example for multiple samples
+1. QC: fastQC.sh
+2. trim adaptor and kseq: double_trim.sh
+3. Alignment: bowtie_align.sh
+4. mark and de duplication: picard_rmdup.sh
+5. filter out fragment longer than 120bp: filter120bp.sh
+(optional). remove reads in unnecessary chr: filter_chr.sh
+6. call peaks with MACS2: peakcalling_no_control.sh / peakcalling_with_control.sh
+
+7. create heatmap: heatmap_prepare.sh --> heatmap_peak.sh
