@@ -1,0 +1,3 @@
+The listed genome.*.bt2 files are empty files for display
+The bowtie indexe files for hg38 should be downloaed from bowtie2 website: 
+$ wget https://genome-idx.s3.amazonaws.com/bt/GRCh38_noalt_as.zip
