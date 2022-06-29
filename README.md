@@ -38,7 +38,7 @@ Following is the step to do CUT&RUN analysis and the corresponding script name. 
 - Besides viewing bed file directly, we could plot heatmap to see the enrichment of each sample in desired genomic region.
 - To be able to compare enrichment difference between samples, we use deeptools to normalize mapped-reads to CPM (count per million) for each sample.
 - Then, we could plot heatmap to see the enrichment of each sample in desired genomic region. Note that you could decide how many samples to plot and which bed file to use as desired genomic regions.
-## Final Notes:
+## Notes:
 As an associate Bioinformatician, I do find it useful when reading others step-by-step pipeline instead of using the one-step pipeline. I wish my documentation could also help others better understand the key component of sequencing analysis. Feel free to contact me about any questions or suggestions. I will continue to improve my pipeline and utilize workflow management system in the future.
 ## Referemces:
 1. CUT&RUN Processing Pipeline – 4DN Data Portal. (n.d.-c). 4D Nucleome Data Portal. https://data.4dnucleome.org/resources/data-analysis/cut-and-run-pipeline
