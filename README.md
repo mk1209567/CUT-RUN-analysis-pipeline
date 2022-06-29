@@ -10,6 +10,7 @@ Analysis pipeline for CUT&amp;RUN assay including alignment, QC, deduplication, 
 4. [Picard](https://broadinstitute.github.io/picard/)
 5. [Samtools](http://www.htslib.org/)
 6. [MACS2](https://github.com/macs3-project/MACS)
+7. [deeptools](https://deeptools.readthedocs.io/en/develop/)
 
 If you are using Slurm, you probably could use *module* load to activate these tools, which is included in my scripts. If not, you could download these tools from their source. After installed, make sure you change the direction of your tools correctly in each script.
 ## Steps:
@@ -32,9 +33,11 @@ Following is the step to do CUT&RUN analysis and the corresponding script name. 
 ### 6. Peak-calling (MACS2_peakcalling.sh)
 - Peak calling is a metthod used to identify areas in a genome that has been enriched with aligned reads.
 - We used MACS2 to call peaks with or without control samples.
-- The output of narrowPeak file and summits.bed file could be visualized using IGV browser.
-### 7. Heatmap (to be continue)
-
+- The output of narrowPeak file and summits.bed file could be visualized using [IGV browser](https://software.broadinstitute.org/software/igv/).
+### 7. Heatmap (bamcoverage_cpm.sh --> plot_heatmap.sh)
+- Besides viewing bed file directly, we could plot heatmap to see the enrichment of each sample in desired genomic region.
+- To be able to compare enrichment difference between samples, we use deeptools to normalize mapped-reads to CPM (count per million) for each sample.
+- Then, we could plot heatmap to see the enrichment of each sample in desired genomic region. Note that you could decide how many samples to plot and which bed file to use as desired genomic regions.
 ## Final Notes:
 As an associate Bioinformatician, I continue to learn and improve my biofiormatics pipeline. While learning, I do find it useful when reading others step-by-step pipeline instead of using the one-step pipeline. I wish my documentation could also help others better understand the key component of sequencing analysis. Feel free to contact me about any questions or suggestions.
 ## Referemces:
