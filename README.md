@@ -4,12 +4,12 @@ Analysis pipeline for CUT&amp;RUN assay including alignment, QC, deduplication, 
 - This is an analysis workflow for processing CUT&RUN data. It contains multiple shell scripts that can be run under Slurm managment system. Each script represents a key step in CUT&RUN analysis workflow. Currently, this pipeline conduct the process step by step, which provide a easy way to understand the analysis. It will continue to improve and incorporate workflow management system like Snakemake in the future. All the script files are stored under "pipeline" folder.
 - I also provide the structure of how I store input, output, and the intermediate data. Those files within are for display purpose only. They are empty files just to show what's the workflow and output going to be like when following this pipeline. In the future, I would continue to add real example files.
 ## Requirements:
-1. FastQC
-2. Trimmomatic
-3. Bowtie2
-4. Picard
-5. Samtools
-6. MACS2
+1. [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+2. [Trimmomatic](https://github.com/usadellab/Trimmomatic)
+3. [Bowtie 2](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml)
+4. [Picard](https://broadinstitute.github.io/picard/)
+5. [Samtools](http://www.htslib.org/)
+6. [MACS2](https://github.com/macs3-project/MACS)
 
 If you are using Slurm, you probably could use *module* load to activate these tools, which is included in my scripts. If not, you could download these tools from their source. After installed, make sure you change the direction of your tools correctly in each script.
 ## Steps:
