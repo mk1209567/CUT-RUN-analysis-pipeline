@@ -11,12 +11,13 @@ summitPath='../align/peakcalling/macs2.narrow.control'
 heatmapPath='../align/heatmap'
 #-S represent different samples; -R represent genomic regions
 echo "[info] generate heatmaps for CPM-normalized bigwig file... "
-computeMatrix reference-point -S $samplePath/sample1.bw \
-                                 $samplePath/sample2.bw \
-                                 $samplePath/sample3.bw \
-                                 $samplePath/sample4.bw \
+computeMatrix reference-point -S $samplePath/sample1_CPM.bw \
+                                 $samplePath/sample2_CPM.bw \
+                                 $samplePath/sample3_CPM.bw \
+                                 $samplePath/sample4_CPM.bw \
                               -R $summitPath/sample_macs2_narrow_summits.bed \
-                              --skipZeros -o $heatmapPath/sample.mat.gz -p 2 -a 1000 -b 1000 --referencePoint center
+                              --skipZeros -o $heatmapPath/sample.mat.gz \
+                              -p 2 -a 1000 -b 1000 --referencePoint center
 plotHeatmap -m $heatmapPath/sample.mat.gz \
             -out $heatmapPath/sample.heatmap.png \
             --sortUsing sum --xAxisLabel "" --yAxisLabel "Mean CPM" \
