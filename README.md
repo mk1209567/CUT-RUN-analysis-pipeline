@@ -40,7 +40,7 @@ Following is the step to do CUT&RUN analysis and the corresponding script name. 
 - Then, we could plot heatmap to see the enrichment of each sample in desired genomic region. Note that you could decide how many samples to plot and which bed file to use as desired genomic regions.
 ## Notes:
 As an associate Bioinformatician, I do find it useful when reading others step-by-step pipeline instead of using the one-step pipeline. I wish my documentation could also help others better understand the key component of sequencing analysis. Feel free to contact me about any questions or suggestions. I will continue to improve my pipeline and utilize workflow management system in the future.
-## Referemces:
+## References:
 1. CUT&RUN Processing Pipeline – 4DN Data Portal. (n.d.-c). 4D Nucleome Data Portal. https://data.4dnucleome.org/resources/data-analysis/cut-and-run-pipeline
 2. Zheng, Y. et al. (2020). CUT&Tag Data Processing and Analysis Tutorial. CUTTag_tutorial. https://yezhengstat.github.io/CUTTag_tutorial/
 3. Yu et al., CUT&RUNTools 2.0: a pipeline for single-cell and bulk-level CUT&RUN and CUT&Tag data analysis, Bioinformatics, 2021
