@@ -21,7 +21,7 @@ Following is the step to do CUT&RUN analysis and the corresponding script name. 
 - After FastQC, we will also get a sense of the contamination caused by adaptor. We will use Trimmomatic to remove adaptors. Note that Trimmomatic package comes with different adaptor sequences, you should choose the one match your library prep.
 - Because of the nature of CUT&RUN assay, it's required to do additional trimming. I will use kseq_trimmer in pkgs folder which is suggested by ...
 ### 3. Alignment (bowtie_align.sh)
--  Align reads to the reference genome. To use bowtie2, reference sequence needs to be indexed. We could either do bowtie2-build <genome.fa> to create indexes or we could download indexes for common references (e.g., hg38, hg19, mm10) directly from their [website](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml). 
+-  Align reads to the reference genome. To use bowtie2, reference sequence needs to be indexed. We could either do bowtie2-build <genome.fa> to create indexes or we could download indexes for common references (e.g., hg38, hg19, mm10) directly from [here](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml). 
 - The output is a SAM file, which has alignment information for each read. SAM file is big and uncompressed. We would like to use samtools to convert it into binary format (BAM file).
 ### 4. Deduplication (picard_rmdup.sh)
 - While doing CUT&RUN assay, it's possible to generate PCR duplicates which are artifacts originating from sequencing of identical copies amplified from the same DNA template. We will need to be aware of.
@@ -39,5 +39,15 @@ Following is the step to do CUT&RUN analysis and the corresponding script name. 
 - To be able to compare enrichment difference between samples, we use deeptools to normalize mapped-reads to CPM (count per million) for each sample.
 - Then, we could plot heatmap to see the enrichment of each sample in desired genomic region. Note that you could decide how many samples to plot and which bed file to use as desired genomic regions.
 ## Final Notes:
-As an associate Bioinformatician, I continue to learn and improve my biofiormatics pipeline. While learning, I do find it useful when reading others step-by-step pipeline instead of using the one-step pipeline. I wish my documentation could also help others better understand the key component of sequencing analysis. Feel free to contact me about any questions or suggestions.
+As an associate Bioinformatician, I do find it useful when reading others step-by-step pipeline instead of using the one-step pipeline. I wish my documentation could also help others better understand the key component of sequencing analysis. Feel free to contact me about any questions or suggestions. I will continue to improve my pipeline and utilize workflow management system in the future.
 ## Referemces:
+1. CUT&RUN Processing Pipeline – 4DN Data Portal. (n.d.-c). 4D Nucleome Data Portal. https://data.4dnucleome.org/resources/data-analysis/cut-and-run-pipeline
+2. Zheng, Y. et al. (2020). CUT&Tag Data Processing and Analysis Tutorial. CUTTag_tutorial. https://yezhengstat.github.io/CUTTag_tutorial/
+3. Yu et al., CUT&RUNTools 2.0: a pipeline for single-cell and bulk-level CUT&RUN and CUT&Tag data analysis, Bioinformatics, 2021
+4. Andrews, S. (2010). FastQC:  A Quality Control Tool for High Throughput Sequence Data
+5. Bolger, A. M., Lohse, M., & Usadel, B. (2014). Trimmomatic: A flexible trimmer for Illumina Sequence Data.
+6. Langmead B, Salzberg S. Fast gapped-read alignment with Bowtie 2. Nature Methods. 2012, 9:357-359.
+7. Picard Tools - By Broad Institute. (n.d.). Picard. http://broadinstitute.github.io/picard/
+8. Danecek, P. et al. (2021). Twelve years of SAMtools and BCFtools. GigaScience, 10(2). https://doi.org/10.1093/gigascience/giab008
+9. Zhang, Y. et al. (2008). Model-based Analysis of ChIP-Seq (MACS). Genome Biology, 9(9). https://doi.org/10.1186/gb-2008-9-9-r137
+10. Ramírez, et al. “deepTools2: a next generation web server for deep-sequencing data analysis.” Nucleic Acids Research (2016): gkw257.
